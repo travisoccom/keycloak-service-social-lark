@@ -28,14 +28,11 @@ jobs:
       run: mvn -B package --file pom.xml
 
     # Optional: Save build artifacts for later use
-    - name: Save build snapshot
+    - name: Save build artifacts
       uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
-        path: |
-          target/*.jar
-          target/*.war
-          target/*.ear
+        path: target/*.jar
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
